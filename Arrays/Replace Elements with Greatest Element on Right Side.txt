@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<int> replaceElements(vector<int>& a) {
+        
+        int n = a.size();
+        int maxm = a[n-1];
+        a[n-1]=-1;
+        
+        for(int i=n-2;i>=0;i--){
+            if(a[i]>maxm){
+                int temp_maxm=a[i];
+                a[i]=maxm;
+                maxm=temp_maxm;
+            }
+            else{
+                a[i]=maxm;
+            }
+        }
+        
+        return a;
+    }
+};
