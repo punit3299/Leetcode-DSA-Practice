@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int removeElement(vector<int>& v, int val) {
+        vector<int>::iterator it;
+        it=find(v.begin(),v.end(),val);
+        while(it != v.end()){
+            v.erase(it);
+            it=find(v.begin(),v.end(),val);
+        }
+        return v.size();
+    }
+};
