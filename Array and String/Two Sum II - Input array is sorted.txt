@@ -1,0 +1,26 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& a, int target) {
+        
+        int n=a.size();
+        int p1=0,p2=n-1;
+        
+        while(p1<p2){
+            if(a[p1]+a[p2]==target){
+                break;
+            }
+            else if(a[p1]+a[p2]>target){
+                p2--;
+            }
+            else{
+                p1++;
+            }
+        }
+        
+        vector<int> ans;
+        ans.push_back(p1+1);
+        ans.push_back(p2+1);
+        
+        return ans;
+    }
+};
